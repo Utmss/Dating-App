@@ -61,7 +61,18 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - Screenshot (62).png
+    - assets/image/profile.jpeg
+    - assets/image/like.jpeg
+    - assets/icons/Location.png
+    - assets/icons/dating.png
+    - assets/icons/smile.png
+    - assets/icons/sad.png
+    - assets/icons/Checklist.png
+    - assets/icons/image.png
+    - assets/icons/Plike.png
+    
+    
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
