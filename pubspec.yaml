@@ -64,12 +64,14 @@ flutter:
     - assets/image/profile.jpeg
     - assets/image/like.jpeg
     - assets/icons/Location.png
-    - assets/icons/dating.png
+   
     - assets/icons/smile.png
     - assets/icons/sad.png
     - assets/icons/Checklist.png
     - assets/icons/image.png
     - assets/icons/Plike.png
+    - assets/image/Pulse.jpg
+    - assets/image/RS.jpg
     
     
     

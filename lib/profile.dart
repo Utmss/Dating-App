@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Info.dart';
 import 'package:flutter_application_2/Profile_card.dart';
+import 'package:flutter_application_2/Profile_info.dart';
+import 'package:flutter_application_2/likedme.dart';
 import 'package:flutter_application_2/opaque_img.dart';
 
 class Myprofile extends StatelessWidget {
@@ -8,6 +10,7 @@ class Myprofile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Stack(
       children: [
@@ -43,23 +46,9 @@ class Myprofile extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Container(
+                padding: EdgeInsets.only(top: 50),
                 color: Colors.white,
                 child: Table(children: [
-                  TableRow(children: [
-                    Profilecard(
-                      firstText: '19',
-                      secondText: 'Proposal',
-                      icons: Icon(Icons.star,
-                          color: Color.fromARGB(255, 212, 236, 115)),
-                    ),
-                    Profilecard(
-                        firstText: '11',
-                        secondText: 'Dating',
-                        icons: Image.asset(
-                          'assets/icons/dating.png',
-                          width: 20,
-                        )),
-                  ]),
                   TableRow(children: [
                     Profilecard(
                         firstText: '34',
@@ -100,18 +89,52 @@ class Myprofile extends StatelessWidget {
                           'assets/icons/image.png',
                           width: 20,
                         )),
-                    Profilecard(
-                        firstText: '27',
-                        secondText: 'Likes',
-                        icons: Image.asset(
-                          'assets/icons/Plike.png',
-                          width: 20,
-                        )),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Likedme()));
+                      },
+                      child: Profilecard(
+                          firstText: '27',
+                          secondText: 'Likes',
+                          icons: Image.asset(
+                            'assets/icons/Plike.png',
+                            width: 20,
+                          )),
+                    ),
                   ]),
                 ]),
               ),
             )
           ],
+        ),
+        Positioned(
+          top: Screenheight * (4 / 9) - (80 / 1.5),
+          left: 16,
+          right: 16,
+          child: Container(
+            child: Row(children: [
+              ProfileInfocard(
+                firsttext: '67%',
+                secondtext: 'Progress',
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              ProfileInfocard(
+                hasimage: true,
+                Iconimage: 'assets/image/Pulse.jpg',
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              ProfileInfocard(
+                firsttext: '52',
+                secondtext: 'level',
+              )
+            ]),
+            height: 80,
+          ),
         ),
       ],
     ));
